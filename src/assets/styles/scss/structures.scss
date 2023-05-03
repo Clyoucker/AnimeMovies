@@ -1,0 +1,23 @@
+.root{min-height: 100%;}
+.root-wrapper{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "Header" "Main" "Footer";
+    grid-template-rows: minmax(64px,auto) 1fr minmax(256px,auto);
+}
+
+.header{
+    position: sticky; z-index: 999; top: 0; 
+    background-color: rgba($color: #000000, $alpha: .64); box-shadow: 0 0 4px black; 
+    grid-area: Header;
+    &__body{
+        @include flex($justify:space-between,$align:center);
+        backdrop-filter: blur(5px);
+        .logo-link{height: 42px;}
+        .header-menu{@include flex($justify:space-between,$align:unset)}
+    }
+}
+.main{grid-area: Main;}
+.footer{grid-area: Footer;}
+
+.container{@include container($pad:0 clamp(12px,4vw,64px));}

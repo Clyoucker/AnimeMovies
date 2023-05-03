@@ -1,0 +1,7 @@
+%templateVideo {border-radius: 12px 12px 0 0; box-shadow: $shadow; height: clamp(256px,46vw,820px);}
+
+%templateEpisodes {display: grid; grid-template-columns: repeat(auto-fit,minmax(128px,1fr)); grid-template-rows: 1fr;}
+%templateEpisode {padding: 10px 12px; text-align: center; box-shadow: $shadow;}
+%templateEpisodeActive {background-color: $additional-color; color: #FFFFFF;}
+
+%templateScrenshots {display: grid; grid-template-columns: repeat(4,minmax(164px,1fr)); grid-template-rows: 1fr;}

@@ -1,0 +1,2 @@
+.button{}
+.mini-button{@include button($size:48px,$pad:12px,$bg:$secondary-color,$rad:12px,$shadow:0 0 4px black);}

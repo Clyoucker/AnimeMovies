@@ -1,0 +1,12 @@
+// KeyFrames
+
+// Templates
+    *{transition: $transition;}
+
+    %card-anime-hover{&:hover{background-color: $additional-color;}}
+    %episode-hover{&:hover{background-color: $additional-color; color: $tertiary-color;}}
+
+// Extends
+    .card-anime{@extend %card-anime-hover;}
+    .episode{@extend %episode-hover;}
+

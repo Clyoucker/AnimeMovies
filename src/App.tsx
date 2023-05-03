@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { createBrowserRouter } from 'react-router-dom';
+import { RouterProvider } from 'react-router';
+import { useEffect } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Home from './assets/pages/Home';
+import Anime from './assets/pages/Anime';
+
+export default function App(){
+  const theme = localStorage.getItem("theme") ? localStorage.getItem("theme") : "dark";
+  const routers = createBrowserRouter([
+    {path:"/",element: <Home />,},
+    {path:"/Anime/:id",element: <Anime />,},
+  ]);
+
+  useEffect(()=>{
+    const page = document.querySelector(".page");
+    page?.setAttribute("data-theme",String(theme));
+  },[theme])
+
+
+  return <RouterProvider router={routers} />;
 }
-
-export default App;

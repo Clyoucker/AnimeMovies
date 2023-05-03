@@ -1,0 +1,33 @@
+@media screen and (max-width: 1024px) {
+    .section-anime-information{
+        .section__content{
+            display: flex; flex-direction: column;
+            &-left{width: clamp(164px,20vw,320px);}
+        }
+    }
+}
+
+@media screen and (max-width:820px) {
+    .screnshots{grid-template-columns: repeat(2,minmax(142px,1fr));}
+}
+
+@media screen and (max-width:480px) {
+    .section-anime-information{
+        .section__content{
+            display: flex; flex-direction: column;
+            &-left{display: flex; justify-content: center; width: unset; .card{width: clamp(164px,20vw,320px);}}
+            .section__content-right{.title-rus,.title-eng{text-align: center;}}
+        }
+    }
+}
+
+@media screen and (max-width:1024px) and (orientation: landscape) {
+    .section-anime-movies .section__content {grid-template-columns: repeat(auto-fit,minmax(164px,1fr));}
+    .card-anime {grid-template-rows: minmax(200px,224px) 1fr; min-height: 224px;}
+    .section-title{font-size: clamp(14px,6vw,18px);}
+    .card-title{font-size: 12px}
+}
+
+@media screen and (max-width:820px) and (orientation: landscape) {
+
+}

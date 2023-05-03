@@ -1,0 +1,50 @@
+@mixin wrapper($display:block,$position:false,$positionType:relative,$radius:false,$halfRadius:false,$bgColor:rgba(0,0,0,0)){
+    @if($position){position: $positionType;}
+    @if($display == flex){display: flex;} @else if($display == grid){display: grid;} @else{display: $display;}
+    background-color: $bgColor;
+    @if ($radius == true) {@if($halfRadius){border-radius: $rad;}}
+}
+
+@mixin container($maxWidth:1820px,$height:inherit,$mar:0 auto,$pad:0 0){
+    max-width: $maxWidth; height: $height;
+    margin: $mar; padding: $pad;
+}
+
+@mixin flex($direction:row,$justify:unset,$align:unset,$pad:0,$gap:0,$bgColor:rgba(0,0,0,0),$autoRadius:false,$customRadius:false,$radius:0,$halfRadius:false,$height:100%,$width:100%,$overflow:false,$shadow:false){
+    display: flex; flex-direction: $direction; justify-content: $justify; align-items: $align;
+    padding: $pad; gap: $gap;
+    width: $width; height: $height;
+    background-color: $bgColor;
+    @if ($autoRadius) {@if($halfRadius){border-radius: $rad;}}
+    @if ($customRadius) {border-radius: $radius;}
+    @if ($shadow != false) {box-shadow: $shadow;}
+    @if ($overflow != false) {overflow: $overflow;}
+}
+
+@mixin grid($templateColumns:1fr,$templateRows:1fr,$justify:stretch,$align:stretch,$rowGap:false,$columnGap:false,$gap:24px,$pad:0,$fill:false,$fillColor:rgba(0,0,0,0),$height:inherit){
+    display: grid; grid-template-columns: $templateColumns; grid-template-rows: $templateRows;
+    justify-content: $justify; align-items: $align;
+    height: $height;
+    @if $rowGap != false or $columnGap != false{grid-row-gap: $rowGap; grid-column-gap: $columnGap;} @else{gap:$gap;}
+    @if($fill){&>*{background-color: $fillColor;}}
+}
+
+@mixin image($display:block,$size:64px,$objCover:true,$objContain:false){
+    display: $display;
+    width: $size; height: $size;
+    @if($objCover){object-fit:cover;} @else if($objContain){object-fit:contain;}
+}
+
+@mixin text($size:18px,$align:left,$color:#FFFFFF,$alpha:1,$point:false){
+    color: $color;
+    text-align: $align;
+    opacity: $alpha;
+    @if $point == true {pointer-events: painted} @else{pointer-events: none}
+}
+
+@mixin button($size:0,$width:0,$height:0,$rad:0,$pad:0,$bg:rgba($color: #000000, $alpha: 0),$color:#FFFFFF,$shadow:unset){
+    @if ($size != 0){width: $size; height: $size;} @else {width: $width; height: $height;}
+    background-color: $bg; color: $color;
+    padding: $pad; box-shadow: $shadow;
+    border-radius: $rad;
+}

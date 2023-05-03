@@ -1,0 +1,24 @@
+.section{
+    margin-bottom: clamp(32px,12vw,64px);
+}
+
+.section-anime-movies{
+    .section__content{
+        @include grid($templateColumns:repeat(auto-fit,minmax(224px,1fr)),$justify:space-between,$columnGap:clamp(12px,6vw,24px),$rowGap:clamp(12px,6vw,24px));
+    }
+}
+
+.section-anime-information{
+    position: relative;
+    bottom: clamp(calc(224px / 2),calc(24vw / 2),calc(448px / 2));
+    .section__content{
+        display: grid; grid-template-columns: clamp(164px,20vw,320px) 1fr; grid-template-rows: 1fr; column-gap: 12px;
+        .section__content-right{
+            display: flex; flex-direction: column; gap: 12px;
+            .titles,.description{flex: 1 1 50%;}
+            .description{display: flex; flex-direction: column; gap: 12px;}
+            .title-eng{text-align: left; text-shadow: 0 0 6px $general-color;}
+            .title-rus{text-align: left; text-shadow: 0 0 6px $general-color;}
+        }
+    }
+}

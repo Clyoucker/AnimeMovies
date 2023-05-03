@@ -1,0 +1,38 @@
+*{
+    list-style-type: none; text-decoration: none;
+    box-sizing: border-box; outline: none; font-weight: normal;
+    background-position: center; background-repeat: no-repeat; background-size: cover;
+    margin: 0; padding: 0; border: 0;
+}
+
+html,body{
+    height: 100%; 
+    font-size: 18px; 
+    overflow-x: hidden;
+}
+
+img,svg,video{
+    display: block; 
+    object-fit: cover; 
+    width: 100%; height: 100%;
+}
+
+button,input,textarea{
+    border: none; outline: none; font-family: inherit; 
+    background-color: rgba($color: #000000, $alpha: 0);
+    cursor: pointer;
+}
+input[type="submit"]{cursor: pointer;}
+textarea{resize: none;}
+button:disabled{pointer-events: none; opacity: .64;}
+
+:focus,:active{outline: none;}
+
+ul{list-style-type: none;}
+
+a{
+    display: block; 
+    color: #FFFFFF;
+}
+
+h1,h2,h3,h4,h5,h6,p{font-family: inherit; font-size: inherit;}

@@ -1,0 +1,19 @@
+.theme-swither{
+    display: flex; gap: 24px;
+}
+
+.video{@extend %templateVideo;}
+
+.episodes{
+    @extend %templateEpisodes;
+    .episode{@extend %templateEpisode;}
+    .episode_active{@extend %templateEpisodeActive;}
+}
+
+.screnshots{@extend %templateScrenshots;}
+
+.background-poster{
+    max-width: 100%;
+    height: clamp(224px,24vw,448px);
+}
+.header-container{height: 100%;}

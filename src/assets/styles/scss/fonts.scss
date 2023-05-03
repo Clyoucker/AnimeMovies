@@ -1,0 +1,18 @@
+// FONTS IMPORTS
+@font-face {font-family: "Gabriola"; src: url("../../static/fonts/gabriola.ttf");}
+@font-face {font-family: "Georgia"; src: url("../../static/fonts/georgia.ttf");}
+
+// FONT FAMILY
+    .title{}
+    .section-title{font-family: "Georgia";}
+    .general-title{}
+    .card-title{font-family: "Gabriola";}
+
+// FONT MODS
+    .title{text-align: center;}
+    .title-rus{font-size: clamp(16px,8vw,24px); margin-bottom: 12px;}
+    .title-eng{font-size: clamp(12px,8vw,16px); margin-bottom: 24px;}
+    .description{.text{font-size: clamp(14px,4vw,16px)}}
+    .section-title{font-size: clamp(24px,8vw,32px); background-color: $additional-color; margin-bottom: clamp(24px,6vw,36px);}
+    .general-title{padding: 8px; box-shadow: 0 0 4px rgba($color: #000000, $alpha: .64); border-radius: 12px;}
+    .card-title{font-size: clamp(14px,4vw,18px);}

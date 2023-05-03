@@ -1,0 +1,20 @@
+body[data-theme="light"]{
+    background-color: $tertiary-color; color: $general-color;
+    .card-anime{background-color: $tertiary-color;}
+    .card-title{background-color: $tertiary-color; color: $general-color;}
+    .episode{background-color: $tertiary-color; color: $secondary-color; &:hover{background-color: $additional-color; color: $tertiary-color; cursor: pointer;}}
+    .title-rus{color: $general-color; text-shadow: unset;}
+    .title-eng{color: $general-color;}
+    .description{.text{color: $general-color;}}
+}
+
+body[data-theme="dark"]{
+    background-color: $general-color; color: $tertiary-color;
+    .section-title{color: $tertiary-color;}
+    .card-anime{background-color: $secondary-color; &:hover{background-color: $additional-color; transform: translateY(-12px); .card-title{background-color: $additional-color;}}}
+    .card-title{background-color: $secondary-color;}
+    .episode{background-color: $secondary-color; color: $tertiary-color; &:hover{background-color: $additional-color; color: $tertiary-color; cursor: pointer;}}
+    .title-rus{color: $tertiary-color;}
+    .title-eng{color: $tertiary-color;}
+    .description{.text{color: $tertiary-color;}}
+}
